@@ -1,0 +1,2055 @@
+//********************************************************************
+// Imports
+//********************************************************************
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic|Open+Sans:400,700,400italic);
+//********************************************************************
+// Index
+//********************************************************************
+// Bootstrap variables
+// Global FTE styles
+// - Typography, icons and links
+// - Bootstrap Components
+// - colors and backgrounds
+// Helper classes 
+// - Wordpress classes
+// - Text helper classes
+// Media Queries
+// Bootstrap columns clearfix
+// Body
+// Header
+// Navigation
+//********************************************************************
+// FTE Variables
+//********************************************************************
+@image-root : "/template/img";
+/*@fte-transparency-base: 0.7;
+@fte-transparency-mild: 0.5;
+@fte-transparency-high: 0.3;*/
+@content-area-height: 300px;
+//********************************************************************
+// WordPress Classes & Overides
+//********************************************************************
+
+/*.alignnone {
+    margin: 5px 20px 20px 0;
+}*/
+ 
+//********************************************************************
+// Admin Bar fix
+//********************************************************************
+#wpadminbar {
+    position: fixed;
+}
+
+.admin-bar .navbar-fixed-top {
+    top: 46px;
+}
+
+@media screen and (min-width: 783px) {
+    .admin-bar .navbar-fixed-top {
+        top: 32px;
+    }
+}
+//********************************************************************
+
+.alignnone {
+    .img-responsive;
+    margin: @padding-large-vertical 0 @padding-large-vertical 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    .center-block;
+    .img-responsive;
+    //margin: 5px auto 5px auto;
+    margin: @padding-large-vertical auto @padding-large-vertical auto;
+    max-width:100%;
+}
+
+.alignright {
+    float: right;
+    .img-responsive;
+    //margin: 5px 0 20px 20px;
+    margin: @padding-large-vertical 0 @padding-large-vertical @padding-large-horizontal;
+    @media @bs-media-xs {
+        float:none;
+        max-width:100%;
+        .center-block;
+    }
+}
+
+.alignleft {
+    float: left;
+    .img-responsive;
+    //margin: 5px 20px 20px 0;
+    margin: @padding-large-vertical @padding-large-horizontal @padding-large-vertical 0;
+    @media @bs-media-xs {
+        float:none;
+        max-width:100%;
+        .center-block;
+    }
+}
+/*
+a img.alignright {
+    float: right;
+    //margin: 5px 0 20px 20px;
+    margin: @padding-large-vertical 0 @padding-large-vertical @padding-large-horizontal;
+}
+
+a img.alignnone {
+    //margin: 5px 20px 20px 0;
+    margin: @padding-large-vertical @padding-large-horizontal @padding-large-vertical 0;
+}
+
+a img.alignleft {
+    float: left;
+    //margin: 5px 20px 20px 0;
+    margin: @padding-large-vertical @padding-large-horizontal @padding-large-vertical 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}*/
+
+.wp-caption {
+    background: inherit;
+    //border: 1px solid #f0f0f0;
+    //max-width: 96%; /* Image does not overflow the content area */
+    //padding: 5px 3px 10px;
+    text-align: left;
+    .img-responsive;
+
+}
+
+/*.wp-caption.alignnone {
+    //margin: 5px 20px 20px 0;
+    margin: @padding-large-vertical 0 @padding-large-vertical 0;
+}*/
+
+/*.wp-caption.alignleft, img.alignleft {
+    //margin: 5px 20px 20px 0;
+    margin: @padding-large-vertical @padding-large-horizontal @padding-large-vertical 0;
+    @media @bs-media-xs {
+        float:none;
+        max-width:100%;
+        .center-block;
+    }
+}
+
+.wp-caption.alignright, img.alignright {
+    //margin: 5px 0 20px 20px;
+    margin: @padding-large-vertical 0 @padding-large-vertical @padding-large-horizontal;
+    @media @bs-media-xs {
+        float:none;
+        max-width:100%;
+        .center-block;
+    }
+}*/
+
+/*p img {
+    .img-responsive;
+}*/
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    //max-width: 98.5%;
+    padding: 0;
+    width: auto;
+    .img-responsive;
+}
+.wp-caption-text {
+    background: @gray-dark;
+}
+.wp-caption figcaption {
+    font-size: 13px;
+    line-height: 17px;
+    margin: 0;
+    padding: @padding-large-vertical @padding-large-horizontal;
+    background: @gray-dark;
+    color: @white;
+    a {
+        color: @white;
+    }
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	.box-shadow(0 0 2px 2px rgba(0, 0, 0, 0.6));
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+// Overrides
+/************************/
+
+img[src$=".svg"].img-responsive {
+    width:100%;
+}
+
+a, object, embed {
+   outline: 0 !important;
+}
+
+input::-moz-focus-inner { 
+  border: 0; 
+}
+
+.btn {
+    .transition(background-color .15s linear);
+}
+
+.media-body {
+    word-break: break-word;
+}
+@media @bs-media-xs {
+    .media-object {
+        display:none;
+    }
+}
+.table-condensed a {
+    font-weight: 400;
+}
+
+.accordian .panel {
+    margin-bottom:0;
+    .box-shadow(none);
+    background: transparent;
+    .accordian-heading:hover,
+    .accordian-heading:active,
+    .accordian-heading:focus {
+        text-decoration: none;
+    }
+}
+
+.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.affix-bottom {
+    opacity: 0;
+    position: fixed;
+    top: 0 !important;
+    width: 100%;
+    z-index: 10;
+}
+
+// Social share bar
+.ssba-wrap {
+    margin: 0 -5px;
+}
+
+// Typography, icons and links
+//****************************
+
+/*h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: @heading-font;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+}
+
+p, li, a {
+	font-family: @body-font;
+}*/
+
+// colors variables
+//************************
+
+/*.global-bg {
+	background-color: @fte-global;
+}*/
+
+// Button
+//************************
+
+/*@btn-fte-cta-color: 	#FFF;
+@btn-fte-cta-bg: 		@fte-cta;
+@btn-fte-cta-border: 	darken(@btn-fte-cta-bg, 5%);
+
+.btn-fte-cta {
+  .button-variant(@btn-fte-cta-color; @btn-fte-cta-bg; @btn-fte-cta-border);
+}*/
+
+//********************************************************************
+// FTE Components
+//********************************************************************
+// Labels
+//************************
+.label {
+    border-radius: @border-radius-base;
+}
+
+@label-otg-bg: @fte-otg-news;
+@label-uita-bg: @fte-uita-news;
+@label-terminal-bg: @fte-terminal-news;
+@label-ancillary-news-bg: @fte-ancillary-news;
+@label-europe-bg: @fte-europe;
+@label-global-bg: @fte-global;
+@label-asia-expo-bg: @fte-asia-expo;
+@label-ancillary-bg: @fte-ancillary;
+@label-fte-cta-bg: @fte-cta;
+.label-otg-news {
+    .label-variant(@label-otg-bg);
+}
+
+.label-uita-news {
+    .label-variant(@label-uita-bg);
+}
+
+.label-terminal-news {
+    .label-variant(@label-terminal-bg);
+}
+
+.label-ancillary-news {
+    .label-variant(@label-ancillary-news-bg);
+}
+
+.label-europe {
+    .label-variant(@label-europe-bg);
+}
+
+.label-global {
+    .label-variant(@label-global-bg);
+}
+
+.label-asia-expo {
+    .label-variant(@label-asia-expo-bg);
+}
+
+.label-ancillary {
+    .label-variant(@label-ancillary-bg);
+}
+.label-fte-cta {
+    .label-variant(@label-fte-cta-bg);
+}
+
+// Events Panels / Boxouts
+//************************
+.panel-body {
+    color: @text-color;
+}
+
+.panel-europe-logo {
+    .panel-europe;
+    margin-top:40px;
+}
+.panel-global-logo {
+    .panel-global;
+    margin-top:40px;
+}
+.panel-asia-expo-logo {
+    .panel-asia-expo;
+    margin-top:40px;
+}
+.panel-ancillary-logo {
+    .panel-ancillary;
+    margin-top:40px;
+}
+
+.panel-logo {
+    .drop-shadow;
+    padding: 0 35%;
+    margin-bottom: -60px;
+    @media @bs-media-xs {
+        padding: 0 20%;
+    }
+}
+.panel-europe-logo>.panel-heading,
+.panel-global-logo>.panel-heading,
+.panel-asia-expo-logo>.panel-heading,
+.panel-reatil-logo>.panel-heading {
+    padding-top:30px;
+}
+
+.panel-figure-lead {
+    margin: -15px;
+}
+
+/*.panel-info-bar-otg-news {
+    .bg-otg-news;
+}
+.panel-info-bar-uita-news {
+    .bg-uita-news;
+}
+.panel-info-bar-terminal-news {
+    .bg-terminal-news;
+}
+.panel-info-bar-ancillary-news {
+    .bg-ancillary-news;
+}
+.panel-info-bar-europe {
+    .bg-europe;
+}
+.panel-info-bar-global {
+    .bg-global;
+}
+.panel-info-bar-asia-expo {
+    .bg-asia-expo;
+}
+.panel-info-bar-ancillary {
+    .bg-ancillary;
+}*/
+
+// Sliders
+//************************
+/*.slick-slider-container {
+    position:relative;
+}*/
+/*.slick-slider-nav {
+    position:absolute;
+    bottom:-1px;
+}*/
+
+// I feel that the navigation styling could be refactored and made simpler
+// Specifity seems too high
+
+// Slider navigation - no caption
+.wp-caption .slick-std-slider-nav {
+    margin: -26px 0 0;
+    text-align: left;
+    position:relative;
+    /*@media @bs-media-xs {
+        margin-top:-29px;
+    }
+    @media @bs-media-md {
+        margin-top:-29px;
+    }*/
+    .slick-std-slider-next,
+    .slick-std-slider-prev {
+        //font-size: 22px;
+        padding: 0 10px;
+        .transition(color .15s linear);
+        background: rgba(255, 255, 255, 0.8);
+        color: @text-color;
+        &:hover,
+        &:focus,
+        &:active {
+            color: @black;
+        }
+    }
+}
+
+// Slider navigation in figcaption
+/*.figcaption-nav {
+    // Remove left padding on caption
+    @media @bs-media-sm-and-above {
+        background: @gray-dark;
+        p.wp-caption-text {
+            padding-left:0;
+        }
+    }
+
+    .slick-std-slider-nav {
+        margin: 9px 0;
+        position:relative;
+        @media @bs-media-md {
+            margin: 12px 0;
+        }
+        @media @bs-media-xs {
+            margin: -36px 0 0;
+            text-align: left;
+        }
+    }
+    .slick-std-slider-next,
+    .slick-std-slider-prev {
+        padding: 0 10px;
+        @media @bs-media-md {
+            padding: 0 8px;
+        }
+        .transition(color .15s linear);
+        color: @gray-light;
+        &:hover {
+            color: @white;
+        }
+        @media @bs-media-xs {
+            background: rgba(255, 255, 255, 0.8);
+            color: @text-color;
+            &:hover,
+            &:focus,
+            &:active {
+                color: @black;
+            }
+        }
+    }
+}*/
+
+
+// Icons
+//************************
+/*.icon-bg-sm {
+    width: 34px;
+    height: 34px;
+    background: #FFF;
+    .img-circle;
+    .box-shadow(@box-shadow-base);
+}
+
+.icon-bg-md {
+    width: 80px;
+    height: 80px;
+    background: #FFF;
+    .img-circle;
+    .box-shadow(@box-shadow-base);
+}
+
+.icon-bg-lg {
+    width: 130px;
+    height: 130px;
+    background: #fff;
+    .img-circle;
+    .box-shadow(@box-shadow-base);
+}*/
+
+// Background color Classes
+//************************
+
+.fte-content-bg {
+    background-color: @gray-lighter !important;
+}
+.bg-fte-secondary {
+    background-color: @gray-lightest !important;
+}
+
+.bg-otg-news {
+    background-color: @fte-otg-news !important;
+    color: @white;
+}
+.bg-otg-news-light {
+    background-color: lighten(@fte-otg-news, 10%) !important;
+    color: @white;
+}
+.bg-otg-news-dark {
+    background-color: darken(@fte-otg-news, 20%) !important;
+    color: @white;
+}
+
+.bg-uita-news {
+    background-color: @fte-uita-news !important;
+    color: @white;
+}
+.bg-uita-news-light {
+    background-color: lighten(@fte-uita-news, 10%) !important;
+    color: @white;
+}
+.bg-uita-news-dark {
+    background-color: darken(@fte-uita-news, 20%) !important;
+    color: @white;
+}
+
+.bg-terminal-news {
+    background-color: @fte-terminal-news !important;
+    color:@white;
+}
+.bg-terminal-news-light {
+    background-color: lighten(@fte-terminal-news, 10%) !important;
+    color:@white;
+}
+.bg-terminal-news-dark {
+    background-color: darken(@fte-terminal-news, 20%) !important;
+    color:@white;
+}
+
+.bg-ancillary-news {
+    background-color: @fte-ancillary-news !important;
+    color: @white;
+}
+.bg-ancillary-news-light {
+    background-color: lighten(@fte-ancillary-news, 10%) !important;
+    color: @white;
+}
+.bg-ancillary-news-dark {
+    background-color: darken(@fte-ancillary-news, 20%) !important;
+    color: @white;
+}
+
+.bg-europe {
+    background-color: @fte-europe !important;
+    color: @white;
+}
+.bg-europe-light {
+    background-color: lighten(@fte-europe, 30%) !important;
+    color: @text-color;
+}
+.bg-europe-dark {
+    background-color: darken(@fte-europe, 20%) !important;
+    color: @white;
+}
+
+.bg-global {
+    background-color: @fte-global !important;
+    color: @white;
+}
+.bg-global-light {
+    background-color: lighten(@fte-global, 10%) !important;
+    color: @white;
+}
+.bg-global-dark {
+    background-color: darken(@fte-global, 20%) !important;
+    color: @white;
+}
+
+.bg-asia-expo {
+    background-color: @fte-asia-expo !important;
+    color: @white;
+}
+.bg-asia-expo-light {
+    background-color: fade(@fte-asia-expo, 70%) !important;
+    color: @white;
+}
+.bg-asia-expo-dark {
+    background-color: darken(@fte-asia-expo, 20%) !important;
+    color: @white;
+}
+
+.bg-ancillary {
+    background-color: @fte-ancillary !important;
+    color: @white;
+}
+.bg-ancillary-light {
+    background-color: lighten(@fte-ancillary, 10%) !important;
+    color: @white;
+}
+.bg-ancillary-dark {
+    background-color: darken(@fte-ancillary, 20%) !important;
+    color: @white;
+}
+
+.bg-fte-cta {
+    background-color: @fte-cta !important;
+    color: @white;
+}
+.bg-fte-cta-light {
+    background-color: lighten(@fte-cta, 10%) !important;
+    color: @white;
+}
+.bg-fte-cta-dark {
+    background-color: darken(@fte-cta, 10%) !important;
+    color: @white;
+}
+
+.bg-color-hover(@bg-color, @text-color) {
+    background: lighten(@bg-color, 10%);
+    color: @text-color;
+    .transition(background .15s linear);
+    &:hover {
+        background: @bg-color;
+    }
+}
+
+.bg-default-hover {
+    .bg-color-hover(@gray, @white);
+}
+
+.bg-otg-news-hover {
+    .bg-color-hover(@fte-otg-news, @white);
+}
+
+.bg-uita-news-hover {
+    .bg-color-hover(@fte-uita-news, @gray);
+}
+
+.bg-terminal-news-hover {
+    .bg-color-hover(@fte-terminal-news, @white)
+}
+
+.bg-ancillary-news-hover {
+    .bg-color-hover(@fte-ancillary-news, @white)
+}
+
+.bg-europe-hover {
+    .bg-color-hover(@fte-europe, @white);
+}
+
+.bg-global-hover {
+    .bg-color-hover(@fte-global, @white);
+}
+
+.bg-asia-expo-hover {
+    .bg-color-hover(@fte-asia-expo, @white)
+}
+
+.bg-ancillary-hover {
+    .bg-color-hover(@fte-ancillary, @white)
+}
+.bg-fte-cta-hover {
+    .bg-color-hover(@fte-cta, @white)
+}
+
+// Text color Classes
+//************************
+
+.text-color(@color) {
+    color: @color;
+    &:hover,
+    &:focus,
+    &:active {
+        color: @color;
+    }
+}
+
+.text-otg-news {
+    .text-color(@fte-otg-news);
+}
+
+.text-uita-news {
+    .text-color(@fte-uita-news);
+}
+
+.text-terminal-news {
+    .text-color(@fte-terminal-news);
+}
+
+.text-ancillary-news {
+    .text-color(@fte-ancillary-news);
+}
+
+.text-europe {
+    .text-color(@fte-europe);
+}
+
+.text-global {
+    .text-color(@fte-global);
+}
+
+.text-asia-expo {
+    .text-color(@fte-asia-expo);
+}
+
+.text-ancillary {
+    .text-color(@fte-ancillary);
+}
+
+.text-fte-cta {
+    .text-color(@fte-cta);
+}
+
+.text-awards {
+    .text-color(@fte-awards);
+}
+
+.text-color-hover(@color, @color-hover) {
+    .transition(color .15s linear);
+    color: @color;
+    &:hover,
+    &:focus,
+    &:active {
+        color: @color-hover;
+    }
+}
+
+.text-default-hover {
+    .text-color-hover(lighten(@gray-light, 10%), @gray-light);
+}
+
+.text-otg-news-hover {
+    .text-color-hover(lighten(@fte-otg-news, 10%), @fte-otg-news);
+}
+
+.text-uita-news-hover {
+    .text-color-hover(lighten(@fte-uita-news, 10%), @fte-uita-news);
+}
+
+.text-terminal-news-hover {
+    .text-color-hover(lighten(@fte-terminal-news, 10%), @fte-terminal-news);
+}
+
+.text-ancillary-news-hover {
+    .text-color-hover(lighten(@fte-ancillary-news, 10%), @fte-ancillary-news);
+}
+
+.text-europe-hover {
+    .text-color-hover(lighten(@fte-europe, 10%), @fte-europe);
+}
+
+.text-global-hover {
+    .text-color-hover(@fte-global, darken(@fte-global, 10%));
+}
+
+.text-asia-expo-hover {
+    .text-color-hover(lighten(@fte-asia-expo, 10%), @fte-asia-expo);
+}
+
+.text-ancillary-hover {
+    .text-color-hover(lighten(@fte-ancillary, 10%), @fte-ancillary);
+}
+
+.text-fte-cta-hover {
+    .text-color-hover(lighten(@fte-cta, 10%), @fte-cta);
+}
+
+.text-awards-hover {
+    .text-color-hover(@fte-awards, darken(@fte-awards, 10%));
+}
+
+// Carousels
+//************************
+
+/*.fte-carousel-logo {
+	margin-bottom: 51px;
+	@media @bs-media-sm-and-above {
+		overflow: visible;
+		margin: 70px 0 51px;
+	}
+}
+.fte-carousel-indicators {
+	bottom: -36px;
+    position: absolute;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}*/
+
+//********************************************************************
+//********************************************************************
+//********************************************************************
+// Global Styles
+//********************************************************************
+//********************************************************************
+//********************************************************************
+
+body {
+	overflow-x: hidden;
+}
+
+.push-body {
+    .transition(left 0.3s ease);
+}
+
+a {
+    font-weight:bold;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    color: @black;
+}
+.container-main {
+    background: @white;
+    margin-top:15px;
+}
+
+/*.section-otg-news {
+    background: @fte-otg-news;
+}
+
+.section-uita-news {
+    background: @fte-uita-news;
+}
+
+.section-terminal-news {
+    background: @fte-terminal-news;
+}
+
+.section-ancillary-news {
+    background: @fte-ancillary-news;
+}
+
+.section-europe {
+    background: @fte-otg-news;
+}
+
+.section-global {
+    background: @fte-global;
+}
+
+.section-asia-expo {
+    background: @fte-terminal-news;
+}
+
+.section-ancillary {
+    background: @fte-ancillary-news;
+}*/
+
+.subscribe {
+    margin-top: 5px;
+}
+
+.twitter-hover {
+    color: inherit;
+    .transition(color .15s linear);
+    &:hover {
+        color: @twitter !important;
+    }
+}
+
+.facebook-hover {
+    color: inherit;
+    .transition(color .15s linear);
+    &:hover {
+        color: @facebook !important;
+    }
+}
+
+.google-plus-hover {
+    color: inherit;
+    .transition(color .15s linear);
+    &:hover {
+        color: @google-plus !important;
+    }
+}
+
+.linkedin-hover {
+    color: inherit;
+    .transition(color .15s linear);
+    &:hover {
+        color: @linkedin !important;
+    }
+}
+
+.rss-feed-hover {
+    color: inherit;
+    .transition(color .15s linear);
+    &:hover {
+        color: @rss-feed !important;
+    }
+}
+
+//********************************************************************
+// Header
+//********************************************************************
+.header {
+    margin: 20px 0;
+}
+
+.header-logo {
+    margin-top: 10px;
+}
+
+.header-event-links {
+    padding: 10px 0 10px;
+    @media @bs-media-sm {
+        padding-bottom: 5px;
+    }
+}
+
+
+/*.header-sm-links {
+	max-width: 360px;
+	a {
+		color: @gray;
+	}
+}*/
+
+.fte-tagline {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+// Disable if using images in Event nav
+
+/*.fte-category-links {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+	margin-bottom:10px;
+	border-bottom: 5px solid #ddd;
+	font-family: @headings-font-family;
+	color: @text-color;
+	&:hover, &:focus {
+		text-decoration: none;
+		background-color: #eeeeee;
+	}
+	@media @bs-media-lg {
+		font-size: 20px;
+	}
+	@media @bs-media-md {
+		font-size: 18px;
+	}
+	@media @bs-media-sm {
+		font-size: 16px;
+	}
+}
+*/
+
+.fte-primary-link {
+    .drop-shadow-hover;
+    display: block;
+    padding: 10px 0;
+    .transition(all .15s linear);
+    .transparency-hover-mild;
+}
+
+/*.fte-event-europe {
+    border-bottom: 5px solid @fte-europe;
+    &:hover {
+        border-bottom: 5px solid @fte-europe;
+    }
+}
+
+.fte-event-global {
+    border-bottom: 5px solid @fte-global;
+    &:hover {
+        border-bottom: 5px solid @fte-global;
+    }
+}
+
+.fte-event-asia-expo {
+    border-bottom: 5px solid @fte-asia-expo;
+    &:hover {
+        border-bottom: 5px solid @fte-asia-expo;
+    }
+}
+
+.fte-event-ancillary {
+    border-bottom: 5px solid @fte-ancillary;
+    &:hover {
+        border-bottom: 5px solid @fte-ancillary;
+    }
+}
+
+.fte-category-otg {
+    border-bottom: 5px solid @fte-otg-news;
+    &:hover {
+        border-bottom: 5px solid @fte-otg-news;
+    }
+}*/
+
+.fte-event-info {
+    margin-top: 2px;
+    margin-bottom: 0px;
+    font-size: 87%;
+    font-family: @headings-font-family;
+    @media @bs-media-sm {
+        font-size: 75%;
+    }
+}
+
+.fte-closest-event {
+    background-color: #b80a16;
+    color: #fff;
+    padding: 2px 5px;
+}
+
+//********************************************************************
+// Navigation
+//********************************************************************
+/*.navbar {
+    border: none;
+}*/
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.navbar li,
+.navbar a {
+    font-family: @headings-font-family;
+}
+
+/*.dropdown-menu {
+	right: 0;
+	left: auto;
+}*/
+
+.fte-navbar-primary {
+    //border: none;
+    .navbar-nav {
+        li > a {
+            font-weight: bold;
+            @media @bs-media-sm {
+                //padding-left: 10px;
+                //padding-right: 10px;
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+.nav li > hr {
+    margin:0;
+}
+.fte-navbar-secondary {
+    width: 100%;
+    .dropdown-menu {
+        font-size: 14px;
+    }
+    // Reduce padding at small screen sizes
+    .navbar-nav {
+        li > a {
+            font-size: 14px;
+            font-weight: normal;
+            @media @bs-media-sm {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    @media @bs-media-xs {
+    	border-top: darken(@navbar-otg-news-border, 10%);
+    }
+}
+
+.navbar-header > .dropdown-menu {
+    margin-top:0;
+}
+
+/*.navbar-global,
+.navbar-europe,
+.navbar-asia-expo,
+.navbar-ancillary {
+    border: none;
+}*/
+
+@media @bs-media-xs {
+	.nav-search-ul {
+		> li > a {
+			padding: 8px 10px;
+		}
+	}
+}
+
+.nav-search-input {
+    background: @gray-lightest;
+    border: none;
+    right: 0;
+    .transition(width .15s linear);
+    .box-shadow(none);
+    &:focus {
+        .box-shadow(none);
+    }
+    @media @bs-media-sm-and-above {
+        margin: 0;
+        width: 300px;
+        position: absolute;
+        z-index: 1;
+    }
+    @media @bs-media-md {
+        width: 180px;
+    }
+    @media @bs-media-sm {
+        width: 150px;
+    }
+    @media @bs-media-xs {
+        padding-right: 0;
+        background: transparent;
+    }
+}
+ 
+.nav-register {
+    background: @fte-cta;
+    @media @bs-media-sm-and-above {
+        padding: 0 15px;
+        margin: -1px 0;
+        border: 1px solid darken(@fte-cta, 10%);
+    }
+    &:hover {
+        background: darken(@fte-cta, 10%)
+    }
+    > a, > a:hover {
+        background: transparent !important;
+    }
+}
+
+#navbar-social-media {
+    display: none;
+}
+
+.search-toggle-hidden {
+    display: none !important;
+}
+
+//********************************************************************
+//********************************************************************
+//********************************************************************
+// Home, News Posts & Pages
+//********************************************************************
+//********************************************************************
+//********************************************************************
+.section-page-title {
+    background: @gray-lighter;
+    color: @white;
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+    }
+}
+
+.section-otg-page-title {
+    background: @fte-otg-news;
+    color: @white;
+}
+
+.section-social-media {
+    background-color: @gray-lightest;
+}
+/*
+.section-subscribe-bar {
+    background: fade(@fte-cta, 80%);
+    color: @white;
+}*/
+
+.section-pre-footer {
+    background: @gray-dark;
+    color: @white;
+    padding-bottom:22px;
+}
+
+.section-footer {
+    background: @gray-darker;
+    color: @gray-light;
+}
+
+.article-otg a:hover {
+    text-color: @fte-otg-news !important;
+}
+
+.entry-title {
+    font-weight:bold;
+    margin-top:11px;
+}
+
+.entry-meta {
+    //padding-bottom:15px;
+    a {
+        //margin-right:30px;
+        display:inline-block;
+        img {
+            filter: grayscale(100%) brightness(60%);
+            -webkit-filter: grayscale(100%) brightness(60%);
+        }
+    }
+    a:hover img {
+        filter: grayscale(100%) brightness(0%);
+        -webkit-filter: grayscale(0%) brightness(100%);
+    }
+}
+
+// Comments
+/********************/
+/*.commentform input {
+    display:none;
+}
+.commentform:focus:hover input, .commentform:active:hover input {
+    display:block;
+}*/
+
+.media-body .media {
+        border-left: 1px #DDD solid;
+        padding-left: 10px;
+}
+
+/*.tags-icon {
+    width: auto;
+    float: left;
+}
+.post-tags {
+    margin-left:40px;
+}*/
+
+.fte-staff-profile {
+    @media @bs-media-sm-and-above {
+        margin-left:136px;
+    }
+}
+
+//********************************************************************
+// Lead area
+//********************************************************************
+// Content Backgrounds
+.fte-content-bg {
+    //background-color: @gray-lighter;
+    height: @content-area-height;
+    position: absolute;
+    width: 100%;
+    z-index:-1;
+}
+
+/*
+.fte-otg-news-content-bg {
+    background-color: @fte-otg-news;
+}
+
+.fte-uita-news-content-bg {
+    background-color: @fte-uita-news;
+}
+
+.fte-terminal-news-content-bg {
+    background-color: @fte-terminal-news;
+}
+
+.fte-ancillary-news-content-bg {
+    background-color: @fte-ancillary-news;
+}*/
+
+.fte-content-bg-box-shadow {
+    margin-top: 15px;
+    height: (@content-area-height - 17px);
+    .box-shadow;
+}
+
+/*.fte-content {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+}*/
+
+
+/*.section-lead-area {
+	padding-top: 15px;
+}*/
+
+.news-lead {
+    background: #ffffff;
+    padding-top:15px;
+}
+.news-lead-overlay {
+	@media @bs-media-sm-and-above {
+        background: rgba(255, 255, 255, 0.8);
+	    padding: 15px;
+        overflow:auto;
+    }
+	.media-object {
+		width:60px;
+		height: 45px;
+	}
+}
+
+.news-lead-title-container {
+    @media @bs-media-sm-and-above {
+        position: absolute;
+        z-index: 100;
+        display: inline;
+        padding: 0 15px;
+        margin-left: -15px;
+    }
+    @media @bs-media-xs {
+        margin-bottom: 10px;
+        overflow:auto;
+    }
+}
+
+.news-lead-title {
+    .pull-left;
+    @media @bs-media-sm-and-above {
+        margin-top:10px;
+        padding-right:10px;
+    }
+}
+.news-lead-title-icon {
+    padding-top:10px;
+    width: 60px;
+    height: 45px;
+    .pull-left;
+}
+
+.news-lead-footer {
+    width: 100%;
+    @media @bs-media-sm-and-above {
+        position: absolute;
+        bottom:0%;
+        margin-left: -15px;
+        padding: 0 15px;
+    }
+    @media @bs-media-md {
+        padding: 0 14px 0 15px;
+    }
+}
+
+.news-lead-footer-content {
+	@media @bs-media-sm-and-above {
+		margin-left: -15px;
+	}
+}
+.news-lead-heading-cat {
+	font-weight: bold;
+}
+
+.slick-news-lead-nav {
+	margin-top: 10px;
+	.text-center;
+	@media @bs-media-xs {
+		margin-top: -35px;
+	    padding-bottom: 15px;
+	    .text-left;
+	}
+}
+
+.slick-news-lead-next, .slick-news-lead-prev {
+	//font-size: 30px;
+	padding: 0 10px;
+	color: @text-color;
+    //opacity: @transparency-mild;
+    .transition(all .15s linear);
+    &:hover,
+    &:focus,
+    &:active {
+    	color: @black;
+        //opacity: 1;
+    }
+    @media @bs-media-md {
+		//font-size: 22px;
+	}
+	@media @bs-media-xs {
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+//********************************************************************
+// Ticker bar
+//********************************************************************
+.ticker {
+    padding: 15px;
+    color: #fff;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+/*.ticker-europe {
+    background: @fte-europe;
+}
+
+.ticker-global {
+    background: @fte-global;
+}
+
+.ticker-asia-expo {
+    background: @fte-asia-expo;
+}
+
+.ticker-ancillary {
+    background: @fte-ancillary;
+}*/
+
+//********************************************************************
+// Sidebar/Event News
+//********************************************************************
+.event-news-countdown {
+    padding: 15px 0;
+    color: @fte-cta;
+}
+
+
+/*.countdown > * {
+	display:inline-block;
+	width: 30%;
+	font-size: 60px;
+	line-height:24px;
+	color: @fte-cta;
+	@media @bs-media-xs {
+		font-size: 48px;
+	}
+}*/
+
+// Icon container for positioning and overlay via positon absolute
+/*.event-news-icon-container {
+    position: absolute;
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+}*/
+
+// Circular white background for icons
+
+/*.event-news-icon-bg {
+    width: 80px;
+    height: 80px;
+    background: #FFF;
+    margin: 10px;
+}*/
+
+/*.img-event-news-icon {
+    padding: 12px;
+}*/
+/*.panel-event-news {
+    border:none;
+}*/
+/*.event-news-global,
+.event-news-europe,
+.event-news-asia-expo {
+    margin-bottom:22px;
+}*/
+
+.event-news-logo {
+    .drop-shadow;
+    @media @bs-media-xs {
+        padding: 0 20%;
+    }
+    @media @bs-media-sm {
+        padding: 0 30%;
+    }
+    @media @bs-media-md {
+        padding: 0 15%;
+    }
+    @media @bs-media-lg {
+        padding: 0 20%;
+    }
+}
+
+.event-news-logo-bottom {
+    margin-top: -30px;
+    @media @bs-media-md {
+        margin-top: -20px;
+    }
+}
+.event-news-logo-top {
+    margin-bottom: -30px;
+    z-index: 10;
+    @media @bs-media-md {
+        margin-bottom: -20px;
+    }
+}
+
+//********************************************************************
+// Event Slider
+//********************************************************************
+.slick-slider {
+    cursor: default; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    :focus {
+        outline:none;
+    }
+}
+.slick-slider-cursor-pointer {
+    cursor: default; /* fallback if grab cursor is unsupported */
+    cursor: pointer;
+    cursor: -moz-pointer;
+    cursor: -webkit-pointer;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.slick-slider:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+// solves webkit bugs #1961 and #1890 - see here for more info: https://github.com/kenwheeler/slick/pull/2230
+.slick-track,
+.slick-list {
+    -webkit-perspective: 2000;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/*.carousel-control .icon-prev, .carousel-control .icon-next {
+	font-size: 72px;
+	font-family: sans-serif;
+}*/
+
+// Icon container for positioning and overlay via positon absolute
+/*.event-slider-icon-container {
+    position: absolute;
+    width: 100%;
+    margin-top: -60px;
+}*/
+
+// Circular white background for icons
+
+/*.event-slider-icon-bg {
+	width: 130px;
+	height: 130px;
+	background: #fff;
+}*/
+
+/*.event-slider-icon {
+    padding: 20px;
+}*/
+
+
+/*.event-slider-tab {
+	opacity: 0.5;
+	&:hover {
+		opacity: 1;
+	}
+}*/
+
+/*.slick-events-content {
+    display: flex;
+    align-items: center;
+    @media @bs-media-sm-and-above {
+        margin-top: 60px;
+        position: relative;
+    }
+}*/
+// Fixes absolute positioning issues within slides
+.slick-events-slide {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+.slick-events-slides-nav {
+    position:absolute;
+    width:100vw;
+    padding-top: 15px;
+}
+.slick-events-content {
+    height:500px;
+    background-size:cover;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    padding: 100px 0 15px;
+    @media @bs-media-xs {
+        padding-top: 72px;
+    }
+}
+.slick-events-heading {
+    @media @bs-media-xs {
+        margin-top:0;
+    }
+}
+
+.slick-events-logo {
+    opacity:1;
+}
+
+.slick-events-next,
+.slick-events-prev {
+    color: @white;
+    opacity:0.5;
+    display:block;
+    //padding:10px;
+    @media @bs-media-xs {
+        margin:0;
+        //padding:15px 0 10px;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        color: @white;
+    }
+}
+
+// Container for content positioning
+/*.slick-events-container {
+    @media @bs-media-sm-and-above {
+        padding-top: 15px;
+    }
+}*/
+
+// Transparent black background and padding/margin on content
+.cover-content-black {
+    background-color: rgba(0, 0, 0, @transparency-base);
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: @white;
+}
+
+.cover-content-white {
+    background-color: rgba(255, 255, 255, @transparency-base);
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: @black;
+}
+
+//********************************************************************
+// Footer
+//********************************************************************
+
+.footer-links-list {
+    list-style-type: square;
+    -webkit-padding-start: 25px;
+    a {
+        color: @gray-lighter;
+    }
+    a:hover,
+    a:visited,
+    a:active {
+        color: @white;
+    }
+}
+
+.footer-sm-links {
+    a {
+        color: @gray-lighter;
+    }
+}
+
+//********************************************************************
+//********************************************************************
+//********************************************************************
+// EVENTS
+//********************************************************************
+//********************************************************************
+//********************************************************************
+//********************************************************************
+// Sections
+//********************************************************************
+//********************************************************************
+.events-cover {
+    @media @bs-media-sm-and-above {
+        padding-bottom:60px;
+    }
+}
+
+/*.panel-events-sponsors {
+    .box-shadow-light;
+    @media @bs-media-sm-and-above {
+        margin-left:-10px;
+        margin-right:-10px;
+    }
+}*/
+
+.events-sponsors {
+    max-width:300px;
+    .center-block;
+}
+
+/*.col-events-sponsors {
+    margin-bottom:15px;
+}
+
+.events-sponsors {
+    padding-top: 60%;
+}
+.events-sponsors-bottom {
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    margin: 0 -15px;
+    padding: 0 15px;
+    width:100%;
+}*/
+
+.event-cover-logo {
+    max-width: 320px;
+    margin-bottom:15px;
+}
+/*.events-conference-title {
+    background: @fte-global;
+}
+.section-events-conference-speakers {
+    background: @gray-lightest;
+}
+
+.sections-events-other-links {
+    background: @fte-global;
+}*/
+
+/*
+.events-photos {
+    border: 2px @white solid;
+    overflow-y:hidden;
+}
+.events-photos-global {
+    @media @bs-media-sm-and-above {
+        height:300px;
+    }
+}
+.events-photos-cover {
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .events-photos;
+} */
+
+/*.events-exhibition {
+    //background: @fte-global;
+  background: @gray-lightest;
+  background: linear-gradient(
+    to right, 
+    @fte-global 0%, 
+    @fte-global 50%, 
+    @white 50%, 
+    @white 100%
+  );
+}*/
+
+/*.events-new-for-2016 {
+    background: darken(@fte-global, 30%);
+    color: @white;
+}
+
+.global-vital-info {
+    background: @gray-lighter;
+}*/
+
+.event-countdown {
+    margin-top: -60px;
+    padding: 15px;
+    margin-bottom: 15px;
+    @media @bs-media-xs {
+        margin: 0 -15px;
+    }
+}
+/*.p-event-intro {
+    margin-top:30px;
+}
+
+.p-event-intro-lg {
+    @media @bs-media-lg {
+        margin-top:30px;
+    }
+}*/
+.img-conference-logo {
+
+    max-width:100px;
+    margin-top:22px;
+}
+.links-transparency {
+        .transparency-base;
+        .transition(opacity .15s linear);
+    }
+div:hover>.links-transparency {    
+    opacity: 1;
+}
+
+.div-speaker-logo-container {
+    display:inline-block;
+    width:100%;
+}
+
+.div-speaker-logo {
+    margin: -20px 20px 0;
+    padding:5px;
+    background-color:rgba(255,255,255,.7);
+}
+.img-speaker-photo {
+    border: 1px solid @gray-lightest;
+}
+.img-speaker-logo {
+    padding: 8px;
+}
+
+/*.events-home-exhibitor-logo {
+    margin-bottom:15px;
+}*/
+
+//********************************************************************
+// Testimonials
+//********************************************************************
+.testimonials-speaker {
+    .transition(opacity .15s linear);
+    padding: 15px;
+    @media @bs-media-xs {
+        padding:10px;
+        .cover-content-white {
+            padding: 5px;
+        }
+    }
+    @media @bs-media-sm {
+        padding:5px;
+    }
+    opacity: 0.2;
+    &.slick-active {
+        opacity: @transparency-mild;
+    }
+    &.slick-center {
+        opacity: 1;
+    }
+}
+
+.slick-testimonial-speakers-nav {
+    position: absolute;
+    height: 100%;
+    width:100%
+}
+.slick-testimonials-prev {
+    .pull-left;
+    z-index: 1000;
+    font-size: 30px;
+    top: 30px;
+}
+.slick-testimonials-next {
+    .pull-right;
+    z-index: 1000;
+    font-size: 30px;
+    top: 30px;
+    margin-left: auto;
+}
+//********************************************************************
+// Exhbition
+//********************************************************************
+
+.more-icon-container {
+    margin-top: -35px;
+}
+
+.exhibitor-panel {
+    margin-bottom: 15px;
+    .panel-title {
+        margin-top:0;
+        margin-bottom:11px;
+    }
+}
+
+// EXHIBITOR PANELS - I think it's worth refactoring this into mixins based off of Bootstrap Panels
+.exhibitor-info-bar {
+    .bg-default-hover;
+    .transition(background .15s linear);
+}
+
+.exhibitor-more-icon {
+    .text-default-hover;
+    .transition(color .15s linear);
+}
+
+.exhibitor-otg-news {
+    .exhibitor-info-bar {
+        .bg-otg-news-hover;
+    }
+    /*.exhibitor-more-icon {
+		.text-otg-news-hover;
+	}*/
+    &:hover, &:active, &:focus {
+        .exhibitor-info-bar {
+            .bg-otg-news;
+        }
+        .exhibitor-more-icon {
+            .text-otg-news;
+        }
+    }
+}
+
+.exhibitor-uita-news {
+    .exhibitor-info-bar {
+        .bg-uita-news-hover;
+    }
+    /*.exhibitor-more-icon {
+		.text-uita-news-hover;
+	}*/
+    &:hover {
+        .exhibitor-info-bar {
+            .bg-uita-news;
+        }
+        .exhibitor-more-icon {
+            .text-uita-news;
+        }
+    }
+}
+
+.exhibitor-terminal-news {
+    .exhibitor-info-bar {
+        .bg-terminal-news-hover;
+    }
+    /*.exhibitor-more-icon {
+		.text-terminal-news-hover;
+	}*/
+    &:hover {
+        .exhibitor-info-bar {
+            .bg-terminal-news;
+        }
+        .exhibitor-more-icon {
+            .text-terminal-news;
+        }
+    }
+}
+
+.exhibitor-ancillary-news {
+    .exhibitor-info-bar {
+        .bg-ancillary-news-hover;
+    }
+    /*.exhibitor-more-icon {
+		.text-ancillary-news-hover;
+	}*/
+    &:hover {
+        .exhibitor-info-bar {
+            .bg-ancillary-news;
+        }
+        .exhibitor-more-icon {
+            .text-ancillary-news;
+        }
+    }
+}
+
+//********************************************************************
+// Conference
+//********************************************************************
+.conf-sessions {
+    position: relative;
+}
+
+.conf-sessions-navbar {
+    .transition(opacity .15s linear);
+}
+
+.conf-sessions-border {
+    position:absolute;
+    border-left:2px solid #ddd;
+    left:5px;
+    height:100%;
+    top:10px;
+}
+
+
+.conf-sessions-border-europe {
+    border-color: @panel-europe-border;
+}
+.conf-sessions-border-global {
+    border-color: @panel-global-border;
+}
+.conf-sessions-border-asia-expo {
+    border-color: @panel-asia-expo-border;
+}
+.conf-sessions-border-ancillary {
+    border-color: @panel-ancillary-border;
+}
+
+/*.session-timing-europe {
+    background: darken(@fte-europe, 20%);
+    color:white;
+}
+.session-timing-global {
+    background: darken(@fte-global, 20%);
+    color:white;
+}
+.session-timing-asia-expo {
+    background: darken(@fte-asia-expo, 20%);
+    color:white;
+}
+.session-timing-ancillary {
+    background: darken(@fte-ancillary, 20%);
+    color:white;
+}*/
+
+.session-timing {
+    padding: 5px;
+    @media @bs-media-sm-and-above {
+        position: absolute;
+        margin-top: 5px;
+        margin-left: -10.5px;
+        font-size: 14px;
+    }
+    .bg-darker;
+    border: 1px @panel-global-border solid;
+}
+
+.conf-sessions-footer-global {
+    background: darken(@fte-global, 20%);
+    color: @white;
+    margin-bottom:15px;
+}
+
+.text-inset {
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 0px 1px 2px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
