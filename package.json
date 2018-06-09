@@ -1,7 +1,7 @@
 {
-  "name": "glen-park-responsive",
+  "name": "future-travel-experience",
   "version": "1.0.0",
-  "description": "Responsive Website for Glen Park",
+  "description": "News publishing and marketing website for Future Travel Experience",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
