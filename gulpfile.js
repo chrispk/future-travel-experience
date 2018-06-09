@@ -40,8 +40,8 @@ const siteRoot = '_site';
         },
         css: {
             src: basepaths.src + '/less',
-            dest: basepaths.dest,
-            jekyll: basepaths.jekyll
+            dest: basepaths.dest + '/css',
+            jekyll: basepaths.jekyll + '/css'
         },
         templates: {
           includes: './_includes',
