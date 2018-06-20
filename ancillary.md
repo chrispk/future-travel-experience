@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: news
 title: Ancillary
-permalink: /think-tanks/
+permalink: /ancillary/
+news-prefix: ancillary
 ---

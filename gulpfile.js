@@ -172,6 +172,7 @@ gulp.task('serve', () => {
     * if browsersync refreshes are required set files to watch source files instead
     */
     //files: [siteRoot + '/**'],
+    startPath: '/future-travel-experience',
     port: 4000,
     server: {
       baseDir: siteRoot
